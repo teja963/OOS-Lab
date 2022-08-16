@@ -1,22 +1,14 @@
-import java.lang.*;
 import java.util.*;
-
 class Q6{
-	  public static Scanner scanner = new Scanner(System.in);
-	  public static void main(String[] args){
-			int num = scanner.nextInt();
-			String str = ""+num;
-			int i = 0;
-			int j = str.length()-1;
-			while(j >= i && str.charAt(i) == str.charAt(j)){
-				  i++;
-				  j--;
-			}
-			if(j > i){
-				  System.out.println("False");
-			}else{
-				  System.out.println("True");
-			}
-			scanner.close();
-	  }
+	public static void main(String []s){
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter the number:");
+		int n = sc.nextInt();
+		StringBuilder ans = new StringBuilder(""+n);
+		ans.reverse();
+		int n1 = Integer.parseInt(ans.toString());
+		System.out.println(n == n1);
+		sc.close();
+	}
 }
+
