@@ -1,29 +1,16 @@
-import java.lang.*;
 import java.util.*;
-
-class q1{
-	  public static Scanner scanner = new Scanner(System.in);
-	  public static void main(String[] args){
-			ArrayList<Integer> mylist = new ArrayList<Integer>();
-			String data = scanner.nextLine();
-			Scanner scanf = new Scanner(data);
-			while(scanf.hasNextInt()){
-				  mylist.add(scanf.nextInt());
-			}
-			int count = 1;
-			int repcount = 0;
-			int start = 0;
-			for(int end  =1;end<mylist.size();end++){
-				  if(mylist.get(start) == mylist.get(end)){
-						count++;
-						if(count > 2)
-							repcount++;
-				  }else{
-						count = 1;
-						start = end;
-				  }
-			}
-			System.out.println("The actual length is : "+mylist.size());
-			System.out.println("After duplicates : "+(mylist.size()-repcount));
-	  }
+import java.lang.*;
+public class q1{
+	public static void main(String[] s){
+		Scanner sc = new Scanner(System.in);
+		ArrayList<Integer> my_list = new ArrayList<Integer>();
+		String input = sc.nextLine();
+		Scanner read = new Scanner(input);
+		while(read.hasNextInt()){
+			my_list.add(read.nextInt());
+		}
+		for(int i = 0; i < my_list.size(); i++){
+			System.out.print(my_list.get(i));
+		}
+	}
 }

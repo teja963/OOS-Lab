@@ -1,18 +1,22 @@
-import java.lang.*;
 import java.util.*;
-
-class q3{
-	  public static Scanner scanner = new Scanner(System.in);
-	  public static void main(String[] args){
-			String input = scanner.nextLine();
-			HashSet<Character> myhash =  new HashSet<Character>();
-			for(int i=0;i<input.length();i++){
-				  char ch = input.charAt(i);
-				  if(!myhash.contains(ch)){
-						myhash.add(ch);
-						System.out.print(ch);
-				  }
+import java.lang.*;
+public class q3{
+	public static void main(String[] s){
+		Scanner sc = new Scanner(System.in);
+		String str = sc.nextLine();
+		int[] a = new int[256];
+		Arrays.fill(a, 0);
+		String ans = "";
+		for(int i = 0; i < str.length(); i++){
+			a[str.charAt(i)]++;
+		}
+		for(int i = 0; i < str.length(); i++){
+			int num = str.charAt(i);
+			if(a[num] > 0){
+				ans += str.charAt(i);
+				a[num] = 0;
 			}
-			System.out.println();
-	  }
+		}
+		System.out.println(ans);
+	}
 }
