@@ -3,14 +3,26 @@ import java.lang.*;
 public class q1{
 	public static void main(String[] s){
 		Scanner sc = new Scanner(System.in);
-		ArrayList<Integer> my_list = new ArrayList<Integer>();
-		String input = sc.nextLine();
-		Scanner read = new Scanner(input);
-		while(read.hasNextInt()){
-			my_list.add(read.nextInt());
+		String ip = sc.nextLine();
+		String[] str = ip.split("\\,|\\[|\\]+");
+		int len = str.length-1, updated_len = 1, count = 0;
+		if(str.length == 0){
+			len = 0;
+			updated_len = 0;
 		}
-		for(int i = 0; i < my_list.size(); i++){
-			System.out.print(my_list.get(i));
+		for(int i = 1; i < str.length-1; i++){
+			if(str[i].equals(str[i+1])){
+				count++;
+				if(count < 2)updated_len++;
+			}
+			else{
+				count = 0;       
+				updated_len++;
+			}
 		}
+		System.out.println("Length of the array: "+len);
+		System.out.println("After removing duplicates, the length of the array: "+updated_len);
 	}
 }
+
+
