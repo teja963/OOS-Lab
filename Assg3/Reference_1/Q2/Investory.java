@@ -19,6 +19,7 @@ class Investory{
 				  System.out.println(item.id+","+item.name+","+item.cost+","+mylist.get(item));
 				  cost = cost + item.cost*mylist.get(item);
 			}
+			
 			System.out.print("Total :");
 			System.out.println(cost);
 			System.out.println("********");

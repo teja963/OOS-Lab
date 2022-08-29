@@ -31,15 +31,19 @@ class q1{
 		ReverseMain rmain = new ReverseMain();
 		head = rmain.reverseList(head);
 		System.out.println("The reversed list is:");
-		display(head);
+		display(head, n);
 	}
 	
-	public static void display(Node head){
+	public static void display(Node head, int n){
 		while(head != null){
-			System.out.print(head.data+"->");
+			n--;
+			System.out.print(head.data);
+			if(n != 0)System.out.print("->");
 			head = head.next;
 		}
+		System.out.println();
 	}
+	
 	public static class ReverseMain{
 		public static Node reverseList(Node head){
 			Node curr = head, prev = null;
