@@ -11,7 +11,7 @@ class q6{
 			my_list.add(new Student(sc.next(), sc.next(), sc.nextDouble()));
 		}
 		for(Student x: my_list){
-			System.out.println(x.getname()+" "+x.getroll()+" "+x.getcgpa()+" "+x.getpercentage());
+			System.out.println(x.getname()+" "+x.getroll()+" "+x.getcgpa()+" "+x.getpercentage()+"%");
 		}
 	}
 	public static class Student{
