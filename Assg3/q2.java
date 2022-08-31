@@ -24,28 +24,30 @@ class q2{
 				System.out.println("Add Invoice Item(Y/N)");
 				String tmp = sc.next();
 				sc.nextLine();
-				System.out.println("Enter Inventory ID and Quantity line by line, type OKAY at the end of the list");
-				while(true){
-					String tmp_1 = sc.nextLine();
-					String[] ip = tmp_1.split("\\s+");
-					if(ip.length == 1)break;
-					else{
-						int id = Integer.parseInt(ip[0]);
-						int quantity = Integer.parseInt(ip[1]);
-						mp.put(id, quantity);
+				if(tmp.equals("Y")){
+					System.out.println("Enter Inventory ID and Quantity line by line, type OKAY at the end of the list");
+					while(true){
+						String tmp_1 = sc.nextLine();
+						String[] ip = tmp_1.split("\\s+");
+						if(ip.length == 1)break;
+						else{
+							int id = Integer.parseInt(ip[0]);
+							int quantity = Integer.parseInt(ip[1]);
+							mp.put(id, quantity);
+						}
 					}
-				}
-				System.out.println("***INVOICE***");
-				int cost = 0;
-				for(Integer x: mp.keySet()){
-					int quantity = mp.get(x);
-					if(stk.check(x)){
-						Item item = stk.getId(x);
-						System.out.println(item.id+","+item.name+","+item.price+","+quantity);
-						cost += item.price*quantity;
+					System.out.println("***INVOICE***");
+					int cost = 0;
+					for(Integer x: mp.keySet()){
+						int quantity = mp.get(x);
+						if(stk.check(x)){
+							Item item = stk.getId(x);
+							System.out.println(item.id+","+item.name+","+item.price+","+quantity);
+							cost += item.price*quantity;
+						}
 					}
+					System.out.println("Total:"+cost);
 				}
-				System.out.println("Total:"+cost);
 			}
 		}
 	}
