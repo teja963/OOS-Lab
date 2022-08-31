@@ -12,7 +12,7 @@ class q1{
 	
 	public static void main(String[] a){
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter the number of nodes:");
+		System.out.print("Enter the number of nodes:");
 		int n = sc.nextInt();
 		Node head = null, tmp = null;
 		

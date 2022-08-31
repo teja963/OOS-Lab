@@ -23,7 +23,7 @@ class q3{
 				str[4] = sc.nextLine();
 				if(scheduleMeeting(str, my_list)){
 					my_list.add(new DepartmentMeetingScheduler(str[0], str[1], str[2], str[3], str[4]));
-					System.out.println("Scheduled successfully!!"+my_list.size());	
+					System.out.println("Scheduled successfully!!");	
 				}
 				else{
 					System.out.println("Collision! Already another meeting is scheduled\n");
