@@ -12,21 +12,25 @@ class Q3{
         Integer n = Integer.parseInt(sc.next());
         sc.nextLine();
         ArrayList<Student> my_list = new ArrayList<Student>();
+        ArrayList<String> ans = new ArrayList<String>();
         for(int i = 0; i < n; i++){
             String ip = sc.nextLine();
             String[] str = ip.split("\\,+");
             my_list.add(new Student(str[0].substring(1), str[1], str[2].substring(0, str[2].length()-1)));
         }
         Collections.sort(my_list, new Comp());
-        Integer k = Integer.parseInt(sc.nextLine());
-        Integer prev = 0;
+        Integer prev = 0, k = 0;
         for(Student s: my_list){
-            if(prev != s.get_height() && k > 0){
-                System.out.print(s.get_name());
-                if(k != 1)System.out.print(",");
-                k--;
+            if(prev != s.get_height()){
+                ans.add(s.get_name());
+                k++;
                 prev = s.get_height();
             }
+        }
+        System.out.println(k);
+        for(int i = 0; i < ans.size(); i++){
+            System.out.print(ans.get(i));
+            if(i != ans.size()-1)System.out.print(",");
         }
     }
     public static class Student{
