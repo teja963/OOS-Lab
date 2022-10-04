@@ -24,36 +24,36 @@ public class Q5{
             }
         }
     }
-    abstract class Student{
-        String name;
-        String roll_number;
-        public Student(String name, String roll_number){
-            this.name = name;
-            this.roll_number = roll_number;
-        }
-        public String getRoll(){
-            return this.roll_number;
-        }
-        public abstract void getFeeDetails();
+}
+abstract class Student{
+    private String name;
+    private String roll_number;
+    public Student(String name, String roll_number){
+        this.name = name;
+        this.roll_number = roll_number;
     }
-    public static class Undergraduate extends Student{
-        int fee_amount;
-        public Undergraduate(String name, String roll_number, int fee_amount){
-            super(name, roll_number);
-            this.fee_amount = fee_amount;
-        }
-        public void getFeeDetails(){
-            System.out.println(this.fee_amount);
-        }
+    public String getRoll(){
+        return this.roll_number;
     }
-    public static class Postgraduate extends Student{
-        int fee_amount;
-        public Postgraduate(String name, String roll_number, int fee_amount){
-            super(name, roll_number);
-            this.fee_amount = fee_amount;
-        }
-        public void getFeeDetails(){
-            System.out.println(this.fee_amount);
-        }
+    public abstract void getFeeDetails();
+}
+class Undergraduate extends Student{
+    private int fee_amount;
+    public Undergraduate(String name, String roll_number, int fee_amount){
+        super(name, roll_number);
+        this.fee_amount = fee_amount;
+    }
+    public void getFeeDetails(){
+        System.out.println(this.fee_amount);
+    }
+}
+class Postgraduate extends Student{
+    private int fee_amount;
+    public Postgraduate(String name, String roll_number, int fee_amount){
+        super(name, roll_number);
+        this.fee_amount = fee_amount;
+    }
+    public void getFeeDetails(){
+        System.out.println(this.fee_amount);
     }
 }
