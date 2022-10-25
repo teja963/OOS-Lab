@@ -1,29 +1,43 @@
 import java.io.*;
 import java.lang.*;
 import java.util.*;
-class Membership{
+
+
+class Membership
+{
     int discount=0;
 }
-class Premium extends Membership{
+
+class Premium extends Membership
+{
     int discount=20;
 }
-class Gold extends Membership{
+
+class Gold extends Membership
+{
     int discount=15;
 }
-class Silver extends Membership{
+
+class Silver extends Membership
+{
     int discount=10;
 }
-class Customer{
+
+class Customer
+{
     String name;
     String phone;
     String membership;
+    
     Customer(String name, String phone, String membership)
     {
         this.name=name;
         this.phone=phone;
         this.membership=membership;
     }
+        
 }
+
 class Service
 {
     String serviceName;
@@ -34,11 +48,13 @@ class Service
         this.cost=cost;
     }
 }
+
 public class Q6
 {
 	public static void main(String[] args) 
 	{
-	    Scanner sc=new Scanner(System.in);	    
+	    Scanner sc=new Scanner(System.in);
+	    
 	    // Taking input details
 	    System.out.println("Enter Customer Details");
 	    System.out.print("Name: ");
@@ -96,7 +112,7 @@ public class Q6
 	    
 	    for(Service s:services)
 	    {
-	        System.out.println(serialNumber+1+". "+s.serviceName+"\t"+s.cost);
+	        System.out.println(serialNumber+". "+s.serviceName+"\t"+s.cost);
 	        serialNumber++;
 	        totalCost+=s.cost;
 	        float discountOfItem=(float)(s.cost*discountPercentage)/(float)100;
@@ -110,7 +126,10 @@ public class Q6
 	    {
 	        System.out.println((int)(totalCost-totalDiscount));
 	    }
-	    else System.out.println((totalCost-totalDiscount));
-		    	    
+	    else System.out.println((totalCost-totalDiscount));    
+	    
+	    
+	    
 	}
 }
+
