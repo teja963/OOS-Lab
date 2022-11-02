@@ -1,7 +1,7 @@
 import java.io.*;
 import java.lang.*;
 import java.util.*;
-public class Q5
+public class q5
 {
 	public static void main(String[] args) 
 	{
